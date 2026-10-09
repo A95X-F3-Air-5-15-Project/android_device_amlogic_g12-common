@@ -34,9 +34,11 @@ PRODUCT_PACKAGES += \
     camera.device@3.5-impl
 
 ## Cgroups
+# PRODUCT_SHIPPING_API_LEVEL 29 makes the system load task_profiles_29.json,
+# which moves the profiles to schedtune. 5.15 has no schedtune, so restore
+# the uclamp profiles from the vendor side, which is loaded last.
 PRODUCT_COPY_FILES += \
-    system/core/libprocessgroup/profiles/cgroups_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
-    system/core/libprocessgroup/profiles/task_profiles_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+    system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
 ## Codecs
 PRODUCT_COPY_FILES += \
