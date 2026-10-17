@@ -136,6 +136,7 @@ vendor/bin/modules_load
 vendor/etc/init/modules_load.rc
 
 ## Media
+vendor/lib/lib_avc_vpcodec.so # from ne-common
 vendor/lib/libmediahal_dmabufmanage.so
 vendor/lib/libmediahal_hardware_demux.so
 vendor/lib/libmediahal_mediametrics.so
